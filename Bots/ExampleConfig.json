@@ -1,6 +1,7 @@
 
 
 {
-    "token": "EXAMPLE_TOKEN"
+    "token": "EXAMPLE_TOKEN",
+    "user": "EXAMPLE_USER_ID"
 
 }
