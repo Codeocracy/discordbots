@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./ElonConfig.json");
 var fs = require('fs');
-const dire = fs.readdirSync('/home/pi/DiscordBot/SpacePics');
+const dire = fs.readdirSync('./Memes/SpacePics');
 
 client.on("ready", () => {
     console.log("Lift off!");
@@ -25,9 +25,13 @@ client.on("message", (message) => {
     // Posts a neat space image upon command /space
     //-----------------------------------------------------------------------------------
     if (message.content.toLowerCase().indexOf("/space") != -1) {
-        message.channel.send({ files: [ '/home/pi/DiscordBot/SpacePics/' + newSpacePic() ]}); return;
+        message.channel.send({ files: [ './Memes/SpacePics/' + newSpacePic() ]}); return;
     }
-
+    
+    //-----------------------------------------------------------------------------------
+    // If the channel is the designated projects channel, none of the other features
+    // may be used.
+    //-----------------------------------------------------------------------------------
     if (message.channel.id==config.projects) {
         return;
     }
@@ -69,7 +73,7 @@ client.login(config.token);
 
 //-----------------------------------------------------------------------------------
 // Returns a new random space pic
-// use message.channel.send({ files: [ '/home/pi/DiscordBot/SpacePics/' + newSpacePic() ]}); return;
+// use message.channel.send({ files: [ './Memes/SpacePics/' + newSpacePic() ]}); return;
 //-----------------------------------------------------------------------------------
 function newSpacePic() {
     var index = Math.floor(Math.random()*dire.length);

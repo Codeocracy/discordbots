@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./SkeletorConfig.json");
 var fs = require('fs');
-const dire = fs.readdirSync('/home/pi/DiscordBot/Multipurpose Memes');
+const dire = fs.readdirSync('./Memes/Multipurpose Memes');
 
 client.on("ready", () => {
   console.log("You fools, I have arrived!");
@@ -24,10 +24,14 @@ client.on("message", (message) => {
   // Sends a new meme every time /meme is sent by a user
   //-----------------------------------------------------------------------------------
   if (message.content.toLowerCase().indexOf("/meme") != -1) {
-      message.channel.send({ files: [ '/home/pi/DiscordBot/Multipurpose Memes/' + newMeme() ]});
+      message.channel.send({ files: [ './Memes/Multipurpose Memes/' + newMeme() ]});
       return;
   }
-
+  
+  //-----------------------------------------------------------------------------------
+  // If the channel is the designated projects channel, none of the other features
+  // may be used.
+  //-----------------------------------------------------------------------------------
   if (message.channel.id==config.projects) {
     return;
   }

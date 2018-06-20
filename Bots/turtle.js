@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./TurtleConfig.json");
 var fs = require('fs');
-const dire = fs.readdirSync('/home/pi/DiscordBot/TurtlePics');
+const dire = fs.readdirSync('./Memes/TurtlePics');
 
 client.on("ready", () => {
     console.log("turtle");
@@ -22,9 +22,13 @@ client.on("message", (message) => {
     if (message.author.bot) return;
 
     if(message.content.toLowerCase().indexOf("/turtle") != -1) {
-        message.channel.send({ files: [ '/home/pi/DiscordBot/TurtlePics/' + newTurtlePic() ]}); return;
+        message.channel.send({ files: [ './Memes/TurtlePics/' + newTurtlePic() ]}); return;
     }
 
+    //-----------------------------------------------------------------------------------
+    // If the channel is the designated projects channel, none of the other features
+    // may be used.
+    //-----------------------------------------------------------------------------------
     if (message.channel.id==config.projects) {
         return;
     }
@@ -41,7 +45,7 @@ client.login(config.token);
 
 //-----------------------------------------------------------------------------------
 // Returns a new random turtle
-// use message.channel.send({ files: [ '/home/pi/DiscordBot/TurtlePics/' + newTurtlePic() ]}); return;
+// use message.channel.send({ files: [ './Memes/TurtlePics/' + newTurtlePic() ]}); return;
 //-----------------------------------------------------------------------------------
 function newTurtlePic() {
     var index = Math.floor(Math.random()*dire.length);

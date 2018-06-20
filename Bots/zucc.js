@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./ZuccConfig.json");
 var fs = require('fs');
-const dire = fs.readdirSync('/home/pi/DiscordBot/ZuccPics');
-const direM = fs.readdirSync('/home/pi/DiscordBot/ZuccMemes');
+const dire = fs.readdirSync('./Memes/ZuccPics');
+const direM = fs.readdirSync('./Memes/ZuccMemes');
 
 client.on("ready", () => {
   console.log("Online");
@@ -25,10 +25,14 @@ client.on("message", (message) => {
   // Sends a new meme every time /zucc is sent by a user
   //-----------------------------------------------------------------------------------
   if (message.content.toLowerCase().indexOf("/zucc") != -1) {
-    message.channel.send({ files: [ '/home/pi/DiscordBot/ZuccMemes/' + newZuccMeme() ]});
+    message.channel.send({ files: [ './Memes/ZuccMemes/' + newZuccMeme() ]});
     return;
   }
 
+  //-----------------------------------------------------------------------------------
+  // If the channel is the designated projects channel, none of the other features
+  // may be used.
+  //-----------------------------------------------------------------------------------
   if (message.channel.id==config.projects) {
     return;
   }
@@ -56,10 +60,39 @@ client.on("message", (message) => {
   }
 
   //-----------------------------------------------------------------------------------
-  // Performs misc responses to a few phrases
+  // Zucc will correct any word with "ck" to have instead "cc"
+  // Example: "Zuckerberg" is corrected to "Zuccerberg*"
   //-----------------------------------------------------------------------------------
-  if (message.content.toLowerCase().indexOf("suck") != -1) {
-    message.channel.send("*succ"); return;
+  var ckIndex = message.content.toLowerCase().indexOf("ck");
+  if (ckIndex != -1) {
+    // ck is at the end of the word
+    if (message.content.toLowerCase().charAt(ckIndex+2) == " " || ckIndex == message.content.length-2) {
+      var correction = "*c";
+      
+      while (ckIndex >=0 && message.content.charAt(ckIndex) != " ") {
+        correction += message.content.charAt(ckIndex);
+        ckIndex--;
+      }
+      message.channel.send(reverseString(correction)); return;
+    }
+    // ck is embedded in the word. Do the same stuff as before, but add on the remaining characters
+    else {
+      var correction = "c";
+      
+      while (ckIndex >=0 && message.content.charAt(ckIndex) != " ") {
+        correction += message.content.charAt(ckIndex);
+        ckIndex--;
+      }
+      correction = reverseString(correction);
+      ckIndex = message.content.toLowerCase().indexOf("ck")+2;
+
+      while (message.content.charAt(ckIndex) != " " && ckIndex <= message.content.length) {
+        correction += message.content.charAt(ckIndex);
+        ckIndex++;
+      }
+      correction += "*";
+      message.channel.send(correction); return;
+    }
   }
 
   //------------------------------------------------------------------------------------
@@ -74,7 +107,7 @@ client.on("message", (message) => {
     message.channel.send("*sips zucc juice*"); return;
   }
   else if (rand >= 0.975) {
-    message.channel.send({ files: [ '/home/pi/DiscordBot/ZuccPics/' + newZuccPic() ]});
+    message.channel.send({ files: [ './Memes/ZuccPics/' + newZuccPic() ]});
     return;
   }
 
@@ -126,4 +159,12 @@ function newZuccPic() {
 function newZuccMeme() {
   var index = Math.floor(Math.random()*direM.length);
   return direM[index];
+}
+
+function reverseString(thing) {
+  var newString = " ";
+  for (var i=thing.length; i>=0; i--) {
+    newString += thing.charAt(i);
+  }
+  return newString;
 }
