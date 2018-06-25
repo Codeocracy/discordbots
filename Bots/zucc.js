@@ -20,6 +20,7 @@ client.on("message", (message) => {
   // Checks that message was sent by a bot, and returns if true
   //-----------------------------------------------------------------------------------
   if (message.author.bot) return;
+  if (message.content.toLowerCase().indexOf("://") != -1) return;
 
   //-----------------------------------------------------------------------------------
   // Sends a new meme every time /zucc is sent by a user
@@ -66,6 +67,8 @@ client.on("message", (message) => {
   var ckIndex = message.content.toLowerCase().indexOf("ck");
   if (ckIndex != -1) {
     // ck is at the end of the word
+    var num = Math.random();
+    
     if (message.content.toLowerCase().charAt(ckIndex+2) == " " || ckIndex == message.content.length-2) {
       var correction = "*c";
       
@@ -77,6 +80,7 @@ client.on("message", (message) => {
     }
     // ck is embedded in the word. Do the same stuff as before, but add on the remaining characters
     else {
+      if (num <= 0.1) {
       var correction = "c";
       
       while (ckIndex >=0 && message.content.charAt(ckIndex) != " ") {
@@ -93,6 +97,7 @@ client.on("message", (message) => {
       correction += "*";
       message.channel.send(correction); return;
     }
+  }
   }
 
   //------------------------------------------------------------------------------------

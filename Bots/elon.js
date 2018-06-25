@@ -20,6 +20,7 @@ client.on("message", (message) => {
     // Checks that message was sent by a bot, and returns if true
     //-----------------------------------------------------------------------------------
     if (message.author.bot) return;
+    if (message.content.toLowerCase().indexOf("://") != -1) return;
 
     //-----------------------------------------------------------------------------------
     // Posts a neat space image upon command /space

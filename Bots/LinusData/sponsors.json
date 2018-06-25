@@ -1,0 +1,16 @@
+{
+    "sponsorArray": [
+        { 
+            "sponsor": "Tunnelbear",
+            "spot": "Tunnelbear is the simple vpn app that makes it easy to browse privately and enjoy a more open internet. With tunnelbear turned on, your connection via landline or Wi-Fi is secured and your online activity is kept private from your internet provider advertizers, hackers and anyone else who's trying to track you or profit from your data. They have a top rated privacy policy and they do not log your activity and you can try it for free, with 500 megabytes of free data and no credit card required over at the link in the description."
+        },
+        {
+            "sponsor": "Our merch store",
+            "spot": "Represent Linus Tech Tips with a shirt from the official store. We use only the highest quality shirts from Design by Humans and shipping is available internationally. Make sure you follow us on Twitter for updates on new designs!"
+        },
+        {
+            "sponsor": "iFixit",
+            "spot": "Whether you're looking for some awesome tools to tinker with your electronics, or you're looking for a teardown guide to tell you HOW you can tinker with your electronics, iFixit has you covered."
+        }
+    ]
+}
