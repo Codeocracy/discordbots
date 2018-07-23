@@ -2,7 +2,7 @@
     "sponsorArray": [
         { 
             "sponsor": "Tunnelbear",
-            "spot": "Tunnelbear is the simple vpn app that makes it easy to browse privately and enjoy a more open internet. With tunnelbear turned on, your connection via landline or Wi-Fi is secured and your online activity is kept private from your internet provider advertizers, hackers and anyone else who's trying to track you or profit from your data. They have a top rated privacy policy and they do not log your activity and you can try it for free, with 500 megabytes of free data and no credit card required over at the link in the description."
+            "spot": "Tunnelbear is the simple vpn app that makes it easy to browse privately and enjoy a more open internet. "
         },
         {
             "sponsor": "Our merch store",
@@ -11,6 +11,46 @@
         {
             "sponsor": "iFixit",
             "spot": "Whether you're looking for some awesome tools to tinker with your electronics, or you're looking for a teardown guide to tell you HOW you can tinker with your electronics, iFixit has you covered."
+        },
+        {
+            "sponsor": "Audible",
+            "spot": "Audible.com is the easy way to buy and manage your audiobooks. Some examples of times when audiobooks might be perfect (there are tips from Linus himself): commuting, laying in bed waiting to feel tired, and working on mundane tasks like writing blurbs about your sponsors."
+        },
+        {
+            "sponsor": "Humble Bundle",
+            "spot": "Choose from thousands of games for PC, Mac, Linux, and Android while supporting a charity of your choice. New games added every day!"
+        },
+        {
+            "sponsor": "Squarespace",
+            "spot": "For beginners and experts Squarespace makes designing and hosting a website easier and more beautiful than ever. They have many templates suitable for blogging, eCommerce, photography portfolios and much more."
+        },
+        {
+            "sponsor": "Dollar Shave Club",
+            "spot": "Are you sick of paying way too much for razors that have features that NO ONE needs? Then you should sign up for Dollar Shave Club. They offer razors, shave butter, buttwipes, and aftershave, all for only a few bucks a month."
+        },
+        {
+            "sponsor": "Blue Apron",
+            "spot": "Blue Apron delivers all the farm-fresh ingredients you need, right to your doorstep, in the right proportions. Their recipes are delivered in a refrigerated box so ingredients will stay fresh even if you’re not at home when your package arrives."
+        },
+        {
+            "sponsor": "Ting",
+            "spot": "If you're sick of the usual 'buy this gigantic bundle that no one will ever use or pay as you go for way too much per minute,' model that most mobile carriers run on, you should definitely give Ting a shot. They're a customer-focused mobile provider in the US that on charges their customers for what they use - no monthly minimums, no hidden fees."
+        },
+        {
+            "sponsor": "Synergy",
+            "spot": "Synergy combines your desktop devices together into one cohesive experience. It's software for sharing your mouse and keyboard between multiple computers on your desk."
+        },
+        {
+            "sponsor": "FreshBooks",
+            "spot": "FreshBooks is the easy to use cloud accounting software that lets you spend less time on paperwork and more time doing what you love"
+        },
+        {
+            "sponsor": "Dbrand",
+            "spot": "Dbrand only uses premium 3M materials for their skins, and they ship worldwide. They offer skins for phones, tablets, smartwatches, gaming consoles, laptops, and more."
+        },
+        {
+            "sponsor": "CableMod",
+            "spot": "With input from some of the world's top modders and enthusiasts, CableMod cables are made to be the best PC cables on the market."
         }
     ]
 }
