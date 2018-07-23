@@ -50,7 +50,7 @@ client.on("message", (message) => {
             if (pIndex == -1) {
                 pIndex = message.content.toLowerCase().substring(isIndex).indexOf("?");
                 if (pIndex == -1) {
-                    pIndex = message.content.length;
+                    return;
                 }
             }  
         }
