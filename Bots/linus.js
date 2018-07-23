@@ -57,9 +57,9 @@ client.on("message", (message) => {
             if (pIndex == -1) {
                 pIndex = message.content.toLowerCase().substring(isIndex).indexOf("?");
                 if (pIndex == -1) {
-                    return;
+                    pIndex = message.content.length;
                 }
-                pIndex += isIndex;
+                return;
             } 
             pIndex += isIndex; 
         }
