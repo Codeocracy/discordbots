@@ -90,13 +90,13 @@ client.on("message", (message) => {
     message.channel.send("pong!"); return;
   }
   if (message.content.toLowerCase().indexOf("connor") != -1) {
-    message.channel.send("*Cono"); return;
+    message.channel.send("*Joseppi :b:"); return;
   }
-  if (message.content.toLowerCase().indexOf("boi") != -1) {
-    message.channel.send("BOI"); return;
+  if (message.content.toLowerCase().indexOf(":breathin:") != -1) {
+    message.channel.send("<:boi:471993433721143297>"); return;
   }
   if ( sarcasm(message.content.toLowerCase()) ) {
-    message.channel.send("******* S A R C A S M    D E T E C T E D*******"); return;
+    message.channel.send("*******S A R C A S M    D E T E C T E D*******"); return;
   }
 
 });
