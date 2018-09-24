@@ -24,7 +24,7 @@ client.on("message", (message) => {
   //-----------------------------------------------------------------------------------
   // Sends a new meme every time /meme is sent by a user
   //-----------------------------------------------------------------------------------
-  if (message.content.toLowerCase().indexOf("/meme") != -1) {
+  if (message.content.toLowerCase().indexOf("/bean") != -1) {
       message.channel.send({ files: [ './Memes/Multipurpose Memes/' + newMeme() ]});
       return;
   }
@@ -89,16 +89,13 @@ client.on("message", (message) => {
   if (message.content.toLowerCase().indexOf("ping") != -1) {
     message.channel.send("pong!"); return;
   }
-  if (message.content.toLowerCase().indexOf("connor") != -1) {
-    message.channel.send("*Joseppi :b:"); return;
-  }
   if (message.content.toLowerCase().indexOf(":breathin:") != -1) {
     message.channel.send("<:boi:471993433721143297>"); return;
   }
   if ( sarcasm(message.content.toLowerCase()) ) {
     message.channel.send("*******S A R C A S M    D E T E C T E D*******"); return;
   }
-
+  
 });
 
 client.login(config.token);

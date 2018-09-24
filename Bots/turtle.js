@@ -35,7 +35,7 @@ client.on("message", (message) => {
     }
 
     /*-----------------------------------------------------------------------------------
-    * Allows the user to request up to 250 turtle emojis.
+    * Allows the user to request up to 1000 turtle emojis.
     * -----------------------------------------------------------------------------------*/
     var mess = message.content.toLowerCase();
     if( mess.indexOf("send") != -1 && mess.indexOf("turtle") !=-1 && mess.indexOf("send") < mess.indexOf("turtle") )
@@ -66,7 +66,7 @@ client.on("message", (message) => {
    * Randomly reacts to messages with a turtle
    * -----------------------------------------------------------------------------------*/
     var num = Math.random();
-    if (num >= 0.99) {
+    if (num <= 0.01 || (message.author.id == config.Eliza && num <= 0.014)) {
         message.react("🐢"); return;
     }
 

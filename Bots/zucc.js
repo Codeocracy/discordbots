@@ -101,17 +101,24 @@ client.on("message", (message) => {
   }
 
   //------------------------------------------------------------------------------------
+  // Zucc will respond "You're welcome" whenever anyone says thanks
+  //------------------------------------------------------------------------------------
+  if (message.content.toLowerCase().indexOf("thank") != -1 || message.content.toLowerCase().indexOf("i love") != -1) {
+    message.channel.send("You're welcome"); return;
+  }
+
+  //------------------------------------------------------------------------------------
   // Zucc will randomly respond by sipping zucc juice, or posting his emoji, or, very
   // rarely posting a zucc pic
   //------------------------------------------------------------------------------------
   var rand = Math.random()
-  if (rand >= 0.99) {
+  if (rand >= 0.995) {
     message.channel.send("<:zucc:436241637912608771>"); return;
   }
-  else if (rand >= 0.98) {
+  else if (rand >= 0.99) {
     message.channel.send("*sips zucc juice*"); return;
   }
-  else if (rand >= 0.975) {
+  else if (rand >= 0.985) {
     message.channel.send({ files: [ './Memes/ZuccPics/' + newZuccPic() ]});
     return;
   }

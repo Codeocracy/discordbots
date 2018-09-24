@@ -17,6 +17,8 @@ client.on('disconnect', function(erMsg, code) {
 
 client.on("message", (message) => {
 
+    var num = Math.random();
+
     /*-------------------------------------------------------------------------------------
     * Checks that message was sent by a bot, and returns if true
     * -----------------------------------------------------------------------------------*/
@@ -38,8 +40,7 @@ client.on("message", (message) => {
     /*-------------------------------------------------------------------------------------
     * Looks for segways into sponsor spots
     * -----------------------------------------------------------------------------------*/
-    var rand = Math.random();
-    if (rand <= 0.075) {
+    if (num <= 0.1) {
         
     var isIndex = -1;
     if (message.content.toLowerCase().indexOf(" is") != -1 && message.content.toLowerCase().indexOf("is ") != -1) {
@@ -76,8 +77,7 @@ client.on("message", (message) => {
     /*-------------------------------------------------------------------------------------
     *   Will occasionally send his own emoji
     * -----------------------------------------------------------------------------------*/
-    var rand = Math.random()
-    if (rand >= 0.99) {
+    if (num >= 0.995) {
     message.channel.send("<:linus:457266062770176010><:linus:457266062770176010><:linus:457266062770176010><:linus:457266062770176010>"); return;
     }
 });
