@@ -1,0 +1,88 @@
+{
+    "Phrases": [
+        {
+            "normal": "*says nothing*",
+            "intense": "*s a y s   n o t h i n g*"
+        },
+        {
+            "normal": "*sells your data*",
+            "intense": "*s e l l s  y o u r   d a t a*"
+        },
+        {
+            "normal": "*says nothing*",
+            "intense": "*s a y s   n o t h i n g*"
+        },
+        {
+            "normal": "*sells your data*",
+            "intense": "*s e l l s   y o u r   d a t a*"
+        },
+        {
+            "normal": "*says nothing*",
+            "intense": "*s a y s   n o t h i n g*"
+        },
+        {
+            "normal": "*sells your data*",
+            "intense": "*s e l l s   y o u r   d a t a*"
+        },
+        {
+            "normal": "We've updated our privacy policy.",
+            "intense": "W e ' v e   u p d a t e d   o u r   p r i v a c y   p o l i c y."
+        },
+        {
+            "normal": "*laughs at Puerto Rico in VR*",
+            "intense": "*l a u g h s   a t   P u e r t o   R i c o   i n   V R*"
+        },
+        {
+            "normal": "*sips zucc juice*",
+            "intense": "*s i p s   z u c c   j u i c e*"
+        },
+        {
+            "normal": "We think offering an ad supported service is most in line with our mission of trying to connect everyone in the world.",
+            "intense": "W e   t h i n k   o f f e r i n g   a n   a d   s u p p o r t e d   s e r v i c e   i s   m o s t  i n   l i n e   w i t h   o u r   m i s s i o n   o f   t r y i n g   t o   c o n n e c t   e v e r y o n e   i n   t h e   w o r l d."
+        },
+        {
+            "normal": "We want to offer a free service that everyone can afford.",
+            "intense": "W e   w a n t   t o   o f f e r   a   f r e e   s e r v i c e   t h a t   e v e r y o n e   c a n   a f f o r d."
+        },
+        {
+            "normal": "We are going through a broad philosophical shift at the company.",
+            "intense": "W e   a r e   g o i n g   t h r o u g h   a   b r o a d   p h i l o s o p h i c a l   s h i f t   a t   t h e   c o m p a n y."
+        },
+        {
+            "normal": "<:zucc:436241637912608771>",
+            "intense": "<:zucc:436241637912608771><:zucc:436241637912608771><:zucc:436241637912608771><:zucc:436241637912608771>"
+        },
+        {
+            "normal": "*buys your startup*",
+            "intense": "*b u y s   y o u r   s t a r t u p*"
+        },
+        {
+            "normal": "On Tuesday, we discovered that an attacker exploited a technical vulnerability.",
+            "intense": "O n   T u e s d a y ,   w e   d i s c o v e r e d   t h a t   a n   a t t a c k e r   e x p l o i t e d   a   t e c h n i c a l   v u l n e r a b i l i t y "
+        },
+        {
+            "normal": "My personal challenge for 2018 has been to fix the most important issues facing Facebook",
+            "intense": "M y   p e r s o n a l   c h a l l e n g e   f o r   2 0 1 8   h a s   b e e n   t o   f i x   t h e   m o s t   i m p o r t a n t   i s s u e s   f a c i n g   F a c e b o o k"
+        },
+        {
+            "normal": "We're still investigating what happened",
+            "intense": "W e ' r e   s t i l l   i n v e s t i g a t i n g   w h a t   h a p p e n e d"
+        },
+        {
+            "normal": "I have over 4,000 emails, pictures, addresses, SNS",
+            "intense": "I   h a v e   o v e r   4 , 0 0 0   e m a i l s ,   p i c t u r e s ,   a d d r e s s e s ,  S N S"
+        },
+        {
+            "normal": "*bans your account*",
+            "intense": "*b a n s   y o u r   a c c o u n t*"
+        },
+        {
+            "normal": "*changes oil*",
+            "intense": "*c h a n g e s   o i l*"
+        },
+        {
+            "normal": "*experiences a system error*",
+            "intense": "*e x p e r i e n c e s   a   s y s t e m   e r r o r*"
+        }
+    ]
+}

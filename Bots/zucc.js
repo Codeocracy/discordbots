@@ -4,6 +4,8 @@ const config = require("./ZuccConfig.json");
 var fs = require('fs');
 const dire = fs.readdirSync('./Memes/ZuccPics');
 const direM = fs.readdirSync('./Memes/ZuccMemes');
+const zuccData = require('./ZuccData/Data.json');
+const phraseData = zuccData.Phrases
 
 client.on("ready", () => {
   console.log("Online");
@@ -47,7 +49,7 @@ client.on("message", (message) => {
       message.channel.send("*sips zucc juice*"); return;
     }
     else {
-      message.channel.send(randComment()); return;
+      message.channel.send(speak()); return;
     }
   }
   // more intense version
@@ -56,7 +58,7 @@ client.on("message", (message) => {
       message.channel.send("***s i p s  z u c c  j u i c e***"); return;
     }
     else {
-      message.channel.send(randCommentS()); return;
+      message.channel.send(speakIntense()); return;
     }
   }
 
@@ -136,28 +138,20 @@ client.on("message", (message) => {
 
 client.login(config.token);
 
-//---------------------------------------------------------------------------------------
-// returns a random Zucc comment
-//---------------------------------------------------------------------------------------
-function randComment(){
-  var comments = ["*says nothing*", "*says nothing*", "*sells your data*", "*sells your data*", "We've updated our privacy policy.", 
-                  "*laughs at Puerto Rico in VR*", "We've updated our privacy policy.", "*sips zucc juice*", "*sips zucc juice*",
-                  "We think offering an ad supported service is most in line with our mission of trying to connect everyone in the world.",
-                  "We want to offer a free service that everyone can afford.", "We are going through a broad philosophical shift at the company.",
-                  "<:zucc:436241637912608771>", "*buys your startup*"];
-
-  var num = Math.floor(Math.random()*(comments.length));
-  return comments[num];
+/*-----------------------------------------------------------------------------------
+* returns a random zucc quote
+*-----------------------------------------------------------------------------------*/
+function speak() {
+  var phrase = phraseData[Math.floor(Math.random()*phraseData.length)];
+  return(phrase.normal);
 }
-// more intense version
-function randCommentS(){
-  var comments = ["***s a y s  n o t h i n g***", "***s e l l s  y o u r  d a t a***", "**W e ' v e  u p d a t e d  o u r  p r i v a c y  p o l i c y**",
-                  "***l a u g h s  a t  P u e r t o  R i c o  i n  V R***", "***b u y s  y o u r  s t a r t u p***" ];
-
-  var num = Math.floor(Math.random()*(comments.length));
-  return comments[num];
+/*-----------------------------------------------------------------------------------
+* returns a more intense zucc quote
+*-----------------------------------------------------------------------------------*/
+function speakIntense() {
+  var phrase = phraseData[Math.floor(Math.random()*phraseData.length)];
+  return(phrase.intense);
 }
-
 //-----------------------------------------------------------------------------------
 // Returns a new random zucc pic
 //-----------------------------------------------------------------------------------
