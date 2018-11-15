@@ -40,15 +40,29 @@ client.on("message", (message) => {
     //-----------------------------------------------------------------------------------
     // Performs misc responses to a few phrases
     //-----------------------------------------------------------------------------------
-    if ((message.content.toLowerCase().indexOf("we should") != -1) || (message.content.toLowerCase().indexOf("i want to") != -1) || (message.content.toLowerCase().indexOf("could we") != -1)) {
+  
+    if ((message.content.toLowerCase().indexOf("we should") != -1) || (message.content.toLowerCase().indexOf("i want to") != -1) || (message.content.toLowerCase().indexOf("could we") != -1) || (message.content.toLowerCase().indexOf("boing is going to mars first") != -1) ) {
         message.channel.send("Do it"); return;
     }
 
+    if (message.content.toLowerCase().indexOf("stress") != -1) {
+        message.channel.send("Don't Panic!", { files: [ './Memes/SpacePics/starman.jpeg']})
+    }
+
+    if (message.content.toLowerCase().indexOf("dab on those haters") != -1) {
+        message.channel.send("<:dab:467304428068929550>"); return;
+    }
+
+    if (message.content.toLowerCase().indexOf("fortnite") != -1) {
+        message.channel.send("Had to be done ur welcome", { files: [ './Memes/Multipurpose Memes/FortniteElonTwitter.JPG']}); return;
+    }
+
+    
     //------------------------------------------------------------------------------------
     // Randomly launches users into space
     //------------------------------------------------------------------------------------
     var num = Math.random();
-    if (num >= 0.997) {
+    if (num >= 0.997 || message.content.toLowerCase().indexOf("nerd") != -1) {
         if (message.author.id == config.Lars) {
             message.channel.send("*Launches Lars into space*"); return;
         }
@@ -66,6 +80,9 @@ client.on("message", (message) => {
         }
         else if (message.author.id == config.Bohdan) {
             message.channel.send("*Launches Bohdan into space*"); return;
+        }
+        else if (message.author.id == config.Eliza) {
+            message.channel.send("*Launches Eliza into space*"); return;
         }
     }
 });

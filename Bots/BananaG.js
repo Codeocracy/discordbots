@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./BananaGConfig.json");
+const data = require("./BananaData/Data.json");
+const profanities = data.Profanities;
 var fs = require('fs');
 
 
@@ -33,11 +35,40 @@ client.on("message", (message) => {
   }
 
   /*-----------------------------------------------------------------------------------
-   * Randomly reacts to messages with a banana
-   * -----------------------------------------------------------------------------------*/
-  if (num <= 0.01) {
-      message.react("🍌"); return;
+  * Sends the banhammer when profanity is detected
+  * -----------------------------------------------------------------------------------*/ 
+  for (var i = 0; i < profanities.length; i++) {
+    if (message.content.toLowerCase().indexOf(profanities[i].profanity) != -1) {
+      if (findProfanity(message.content.toLowerCase(), profanities[i].profanity))
+      {
+        message.channel.send("watch your profanity <:banhammer:495774180340531200>"); return;
+      } 
+    }
   }
+
 });
 
 client.login(config.token);
+
+
+function findProfanity (mes, prof) {
+
+    var i = mes.indexOf(prof);
+    // check if prof has a space after it
+    if ( (i != -1) && (mes.substring(i+prof.length, i+prof.length+1) == " ")) {
+      if (i == 0 || mes.substring(i-1,i) == " "){
+        return true;
+      }
+    }
+    //checks if message IS prof
+    else if (mes == prof) {
+      return true;
+    }
+    //checks if message ends with prof
+    else if (mes.substring(mes.length-prof.length) == prof && mes.substring(i-1,i) == " ") {
+      return true;
+    }
+    else {
+      return false;
+    }
+}

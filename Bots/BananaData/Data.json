@@ -1,0 +1,52 @@
+{
+    "Profanities": [
+        {
+            "profanity": "shit",
+            "correction": "snit"
+        },
+        {
+            "profanity": "fuck",
+            "correction": "zucc"
+        },
+        {
+            "profanity": "hell",
+            "correction": "bell"
+        },
+        {
+            "profanity": "bitch",
+            "correction": "binch"
+        },
+        {
+            "profanity": "ass",
+            "correction": "aß"
+        },
+        {
+            "profanity": "damn",
+            "correction": "damm"
+        },
+        {
+            "profanity": "douche",
+            "correction": "dish"
+        },
+        {
+            "profanity": "dick",
+            "correction": "rick"
+        },
+        {
+            "profanity": "twat",
+            "correction": "cat"
+        },
+        {
+            "profanity": "piss",
+            "correction": "pass"
+        },
+        {
+            "profanity": "wanker",
+            "correction": "thanker"
+        },
+        {
+            "profanity": "tax evasion",
+            "correction": "IRS"
+        }
+    ]
+}

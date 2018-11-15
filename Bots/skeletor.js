@@ -108,14 +108,17 @@ var num1 = Math.random();
     var spookyVideo = vids[Math.floor(Math.random()*vids.length)];
     message.channel.send(spookyVideo.name + ": " + spookyVideo.url); return;
   }
-
+  
   /*-----------------------------------------------------------------------------------
   * Randomly posts spooky memes for spooktober
   * -----------------------------------------------------------------------------------*/
+  /*
   if (num1 <= 0.01) {
   message.channel.send({ files: [ './SkeletorData/SpookyMemes/' + newMemeSpooky() ]});
   return;
-}
+  }
+  */
+
   
 });
 
