@@ -32,6 +32,16 @@ client.on("message", (message) => {
     return;
   }
 
+  /*-----------------------------------------------------------------------------------
+  * Corrects David's name to David or Davit for memes
+  *------------------------------------------------------------------------------------*/
+  if (message.content.toLowerCase().indexOf("David") != -1){
+    message.channel.send("Davit*");
+  }
+  else if (message.content.toLowerCase().indexOf("Davit") != -1) {
+    message.channel.send("David*");
+  }
+
   //-----------------------------------------------------------------------------------
   // If the channel is the designated projects channel, none of the other features
   // may be used.
