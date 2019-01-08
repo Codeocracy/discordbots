@@ -35,10 +35,10 @@ client.on("message", (message) => {
   /*-----------------------------------------------------------------------------------
   * Corrects David's name to David or Davit for memes
   *------------------------------------------------------------------------------------*/
-  if (message.content.toLowerCase().indexOf("David") != -1){
+  if (message.content.toLowerCase().indexOf("david") != -1){
     message.channel.send("Davit*");
   }
-  else if (message.content.toLowerCase().indexOf("Davit") != -1) {
+  else if (message.content.toLowerCase().indexOf("davit") != -1) {
     message.channel.send("David*");
   }
 
