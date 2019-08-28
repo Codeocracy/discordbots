@@ -33,7 +33,7 @@ client.on("message", (message) => {
     }
 
     if(message.content.toLowerCase.indexOf("class") != -1) {
-        message.channel.send("*screams in economic justice*")
+        message.channel.send("*screams in economic justice*"); return;
     }
 });
 
