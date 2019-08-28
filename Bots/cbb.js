@@ -41,7 +41,7 @@ client.on("message", (message) => {
     //-----------------------------------------------------------------------------------
 
     if (message.content.toLowerCase().indexOf("sat") != -1) {
-        if (num <= 0.3) {
+        if (num <= 0.15) {
         var satPhrase = sat[Math.floor(Math.random()*sat.length)];
         message.channel.send(satPhrase.phrase);
         }
@@ -51,7 +51,7 @@ client.on("message", (message) => {
     // When someone mentions AP, respond with an AP phrase
     //-----------------------------------------------------------------------------------
     if (message.content.toLowerCase().indexOf("ap") != -1) {
-        if (num <= 0.3) {
+        if (num <= 0.15) {
         var apPhrase = ap[Math.floor(Math.random()*ap.length)];
         message.channel.send(apPhrase.phrase);
         }
@@ -60,7 +60,7 @@ client.on("message", (message) => {
     //-----------------------------------------------------------------------------------
     // Randomly interject annoying phrases
     //-----------------------------------------------------------------------------------
-    if (num <= 0.03) {
+    if (num <= 0.015) {
         var annoyingPhrase = phra[Math.floor(Math.random()*phra.length)];
         message.channel.send(annoyingPhrase.phrase)
     }

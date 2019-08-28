@@ -40,7 +40,7 @@ client.on("message", (message) => {
     /*-------------------------------------------------------------------------------------
     * Looks for segways into sponsor spots
     * -----------------------------------------------------------------------------------*/
-    if (num <= 0.1) {
+    if (num <= 0.05) {
         
     var isIndex = -1;
     if (message.content.toLowerCase().indexOf(" is") != -1 && message.content.toLowerCase().indexOf("is ") != -1) {

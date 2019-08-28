@@ -83,6 +83,30 @@
         {
             "normal": "*experiences a system error*",
             "intense": "*e x p e r i e n c e s   a   s y s t e m   e r r o r*"
+        },
+        {
+            "normal": "I'm proud of the progress we've made",
+            "intense": "*screams in binary*"
+        },
+        {
+            "normal": "I'm not stepping down as Facebook chairman",
+            "intense": "*screams in binary*"
+        },
+        {
+            "normal": "a squirrel dying in your front yard may be more relevant to your interests right now than people dying",
+            "intense": "***b u y s  m o r e  s e r v e r s***"
+        },
+        {
+            "normal": "*buys more servers*",
+            "intense": "***b u y s  m o r e  s e r v e r s***"
+        },
+        {
+            "normal": "I just killed a pig and a goat",
+            "intense": "I  j u s t  k i l l e d  a  p i g  a n d  a  g o a t"
+        },
+        {
+            "normal": "The only meat I'm eating is from animals I've killed myself",
+            "intense": "*prepares to read your emails*"
         }
     ]
 }

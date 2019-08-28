@@ -62,7 +62,7 @@ client.on("message", (message) => {
     // Randomly launches users into space
     //------------------------------------------------------------------------------------
     var num = Math.random();
-    if (num >= 0.997 || message.content.toLowerCase().indexOf("nerd") != -1) {
+    if (num >= 0.9985 || message.content.toLowerCase().indexOf("nerd") != -1) {
         if (message.author.id == config.Lars) {
             message.channel.send("*Launches Lars into space*"); return;
         }
