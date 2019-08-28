@@ -5,7 +5,7 @@ const data = require("./BernieData/Data.json");
 
 
 client.on("ready", () => {
-    console.log("At the ready");
+    console.log("We are going to hold wall street accountable");
   });
   
 // Keeps Bernie online
@@ -32,8 +32,8 @@ client.on("message", (message) => {
       return;
     }
 
-    if(message.content.toLowerCase.indexOf("class") != -1) {
-        message.channel.send("*screams in economic justice*"); return;
+    if(message.content.toLowerCase().indexOf("class") != -1) {
+      message.channel.send("*screams in economic justice*"); return;
     }
 });
 
