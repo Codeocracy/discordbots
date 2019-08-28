@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-// const config = require("./BernieConfig.json");
-const data = require("./bernie/Data.json");
+const config = require("./BernieConfig.json");
+const data = require("./BernieData/Data.json");
 
 
 client.on("ready", () => {
@@ -30,6 +30,10 @@ client.on("message", (message) => {
     //-----------------------------------------------------------------------------------
     if (message.channel.id==config.projects) {
       return;
+    }
+
+    if(message.content.toLowerCase.indexOf("class") != -1) {
+        message.channel.send("*screams in economic justice*")
     }
 });
 
