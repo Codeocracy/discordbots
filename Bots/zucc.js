@@ -18,6 +18,8 @@ client.on('disconnect', function(erMsg, code) {
 });
 
 client.on("message", (message) => {
+
+    var num = Math.random();
   //-----------------------------------------------------------------------------------
   // Checks that message was sent by a bot, and returns if true
   //-----------------------------------------------------------------------------------
@@ -35,11 +37,13 @@ client.on("message", (message) => {
   /*-----------------------------------------------------------------------------------
   * Corrects David's name to David or Davit for memes
   *------------------------------------------------------------------------------------*/
-  if (message.content.toLowerCase().indexOf("david") != -1){
-    message.channel.send("Davit*");
-  }
-  else if (message.content.toLowerCase().indexOf("davit") != -1) {
-    message.channel.send("David*");
+  if (num <= 0.05) {
+    if (message.content.toLowerCase().indexOf("david") != -1) {
+        message.channel.send("Davit*");
+    }
+    else if (message.content.toLowerCase().indexOf("davit") != -1) {
+        message.channel.send("David*");
+    }
   }
 
   //-----------------------------------------------------------------------------------
@@ -50,87 +54,17 @@ client.on("message", (message) => {
     return;
   }
 
-  //-----------------------------------------------------------------------------------
-  // When "zucc" is mentioned, reply with a random thing. Always dodge zucc related
-  // questions by sipping zucc juice. 
-  //-----------------------------------------------------------------------------------
-  if (message.content.toLowerCase().indexOf("zucc") !=- 1) {
-    if (message.content.indexOf("?") != -1) {
-      message.channel.send("*sips zucc juice*"); return;
-    }
-    else {
-      message.channel.send(speak()); return;
-    }
-  }
-  // more intense version
-  if (message.content.toLowerCase().indexOf("z u c c") !=- 1) {
-    if (message.content.indexOf("?") != -1) {
-      message.channel.send("***s i p s  z u c c  j u i c e***"); return;
-    }
-    else {
-      message.channel.send(speakIntense()); return;
-    }
-  }
-
-  //-----------------------------------------------------------------------------------
-  // Zucc will correct any word with "ck" to have instead "cc"
-  // Example: "Zuckerberg" is corrected to "Zuccerberg*"
-  //-----------------------------------------------------------------------------------
-  var ckIndex = message.content.toLowerCase().indexOf("ck");
-  if (ckIndex != -1) {
-    // ck is at the end of the word
-    var num = Math.random();
-    
-    if (message.content.toLowerCase().charAt(ckIndex+2) == " " || ckIndex == message.content.length-2) {
-      var correction = "*c";
-      
-      while (ckIndex >=0 && message.content.charAt(ckIndex) != " ") {
-        correction += message.content.charAt(ckIndex);
-        ckIndex--;
-      }
-      message.channel.send(reverseString(correction)); return;
-    }
-    // ck is embedded in the word. Do the same stuff as before, but add on the remaining characters
-    else {
-      if (num <= 0.1) {
-      var correction = "c";
-      
-      while (ckIndex >=0 && message.content.charAt(ckIndex) != " ") {
-        correction += message.content.charAt(ckIndex);
-        ckIndex--;
-      }
-      correction = reverseString(correction);
-      ckIndex = message.content.toLowerCase().indexOf("ck")+2;
-
-      while (message.content.charAt(ckIndex) != " " && ckIndex <= message.content.length) {
-        correction += message.content.charAt(ckIndex);
-        ckIndex++;
-      }
-      correction += "*";
-      message.channel.send(correction); return;
-    }
-  }
-  }
-
-  //------------------------------------------------------------------------------------
-  // Zucc will respond "You're welcome" whenever anyone says thanks
-  //------------------------------------------------------------------------------------
-  if (message.content.toLowerCase().indexOf("thank") != -1 || message.content.toLowerCase().indexOf("i love") != -1) {
-    message.channel.send("You're welcome"); return;
-  }
-
   //------------------------------------------------------------------------------------
   // Zucc will randomly respond by sipping zucc juice, or posting his emoji, or, very
   // rarely posting a zucc pic
   //------------------------------------------------------------------------------------
-  var rand = Math.random()
-  if (rand >= 0.995) {
+  if (num >= 0.999) {
     message.channel.send("<:zucc:436241637912608771>"); return;
   }
-  else if (rand >= 0.99) {
+  else if (num >= 0.99) {
     message.channel.send("*sips zucc juice*"); return;
   }
-  else if (rand >= 0.985) {
+  else if (num >= 0.985) {
     message.channel.send({ files: [ './Memes/ZuccPics/' + newZuccPic() ]});
     return;
   }
@@ -139,11 +73,83 @@ client.on("message", (message) => {
   // Zucc will randomly ask Cono if he is GDPR Compliant
   //-------------------------------------------------------------------------------------
   if (message.author.id == config.Cono) {
-      var rand = Math.random()
-      if (rand >=0.98) {
+      if (num >=0.997) {
         message.channel.send("Cono, are you GDPR compliant?"); return;
     }
   }
+
+  
+    //-----------------------------------------------------------------------------------
+    // When "zucc" is mentioned, reply with a random thing. Always dodge zucc related
+    // questions by sipping zucc juice. 
+    //-----------------------------------------------------------------------------------
+    if (message.content.toLowerCase().indexOf("zucc") !=- 1) {
+        if (message.content.indexOf("?") != -1) {
+        message.channel.send("*sips zucc juice*"); return;
+        }
+        else {
+        message.channel.send(speak()); return;
+        }
+    }
+    // more intense version
+    if (message.content.toLowerCase().indexOf("z u c c") !=- 1) {
+        if (message.content.indexOf("?") != -1) {
+        message.channel.send("***s i p s  z u c c  j u i c e***"); return;
+        }
+        else {
+        message.channel.send(speakIntense()); return;
+        }
+    }
+
+    if (num <= 0.01) {
+    //-----------------------------------------------------------------------------------
+    // Zucc will correct any word with "ck" to have instead "cc"
+    // Example: "Zuckerberg" is corrected to "Zuccerberg*"
+    //-----------------------------------------------------------------------------------
+    var ckIndex = message.content.toLowerCase().indexOf("ck");
+    if (ckIndex != -1) {
+        // ck is at the end of the word
+        var num = Math.random();
+        
+        if (message.content.toLowerCase().charAt(ckIndex+2) == " " || ckIndex == message.content.length-2) {
+        var correction = "*c";
+        
+        while (ckIndex >=0 && message.content.charAt(ckIndex) != " ") {
+            correction += message.content.charAt(ckIndex);
+            ckIndex--;
+        }
+        message.channel.send(reverseString(correction)); return;
+        }
+        // ck is embedded in the word. Do the same stuff as before, but add on the remaining characters
+        else {
+        if (num <= 0.1) {
+        var correction = "c";
+        
+        while (ckIndex >=0 && message.content.charAt(ckIndex) != " ") {
+            correction += message.content.charAt(ckIndex);
+            ckIndex--;
+        }
+        correction = reverseString(correction);
+        ckIndex = message.content.toLowerCase().indexOf("ck")+2;
+
+        while (message.content.charAt(ckIndex) != " " && ckIndex <= message.content.length) {
+            correction += message.content.charAt(ckIndex);
+            ckIndex++;
+        }
+        correction += "*";
+        message.channel.send(correction); return;
+        }
+    }
+    }
+
+    //------------------------------------------------------------------------------------
+    // Zucc will respond "You're welcome" whenever anyone says thanks
+    //------------------------------------------------------------------------------------
+    if (message.content.toLowerCase().indexOf("thank") != -1 || message.content.toLowerCase().indexOf("i love") != -1) {
+        message.channel.send("You're welcome"); return;
+    }
+  }
+  
 });
 
 client.login(config.token);

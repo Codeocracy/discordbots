@@ -40,44 +40,43 @@ client.on("message", (message) => {
     /*-------------------------------------------------------------------------------------
     * Looks for segways into sponsor spots
     * -----------------------------------------------------------------------------------*/
-    if (num <= 0.05) {
-        
-    var isIndex = -1;
-    if (message.content.toLowerCase().indexOf(" is") != -1 && message.content.toLowerCase().indexOf("is ") != -1) {
-        isIndex = message.content.toLowerCase().indexOf(" is") +1;
-    }
-    else if (message.content.toLowerCase().indexOf("is") == 0 ) {
-        isIndex = 0;
-    }
-    if (isIndex != -1) {
-        var pIndex = message.content.toLowerCase().substring(isIndex).indexOf(".");
-        var segway = ""
+    if (num <= 0.001) {
+        var isIndex = -1;
+        if (message.content.toLowerCase().indexOf(" is") != -1 && message.content.toLowerCase().indexOf("is ") != -1) {
+            isIndex = message.content.toLowerCase().indexOf(" is") +1;
+        }
+        else if (message.content.toLowerCase().indexOf("is") == 0 ) {
+            isIndex = 0;
+        }
+        if (isIndex != -1) {
+            var pIndex = message.content.toLowerCase().substring(isIndex).indexOf(".");
+            var segway = ""
 
-        if (pIndex == -1) {
-            pIndex = message.content.toLowerCase().substring(isIndex).indexOf("!");
             if (pIndex == -1) {
-                pIndex = message.content.toLowerCase().substring(isIndex).indexOf("?");
+                pIndex = message.content.toLowerCase().substring(isIndex).indexOf("!");
                 if (pIndex == -1) {
-                    pIndex = message.content.length;
-                }
-                return;
-            } 
-            pIndex += isIndex; 
+                    pIndex = message.content.toLowerCase().substring(isIndex).indexOf("?");
+                    if (pIndex == -1) {
+                        pIndex = message.content.length;
+                    }
+                    return;
+                } 
+                pIndex += isIndex; 
+            }
+            else {
+                pIndex += isIndex;
+            }
+            
+            segway += message.content.toLowerCase().substring(isIndex, pIndex) + "?";
+            var boi = spon[Math.floor(Math.random() *spon.length)];
+            message.channel.send("You know what else " + segway + " " + boi.sponsor + "! " + boi.spot);
         }
-        else {
-            pIndex += isIndex;
-        }
-        
-        segway += message.content.toLowerCase().substring(isIndex, pIndex) + "?";
-        var boi = spon[Math.floor(Math.random() *spon.length)];
-        message.channel.send("You know what else " + segway + " " + boi.sponsor + "! " + boi.spot);
-    }
     }
 
     /*-------------------------------------------------------------------------------------
     *   Will occasionally send his own emoji
     * -----------------------------------------------------------------------------------*/
-    if (num >= 0.995) {
+    if (num <= 0.002) {
     message.channel.send("<:linus:457266062770176010><:linus:457266062770176010><:linus:457266062770176010><:linus:457266062770176010>"); return;
     } 
 });

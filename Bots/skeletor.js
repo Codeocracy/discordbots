@@ -30,7 +30,8 @@ var num1 = Math.random();
   // Sends a new meme every time /meme is sent by a user
   //-----------------------------------------------------------------------------------
   if (message.content.toLowerCase().indexOf("/meme") != -1) {
-      message.channel.send({ files: [ './Memes/Multipurpose Memes/' + newMeme() ]});
+      // { files: [ './Memes/Multipurpose Memes/' + newMeme() ]} for non spooky version
+      message.channel.send({ files: [ './SkeletorData/SpookyMemes/' + newMemeSpooky() ]}); 
       return;
   }
   
@@ -88,38 +89,38 @@ var num1 = Math.random();
   //-----------------------------------------------------------------------------------
   // Performs misc responses to a few phrases
   //-----------------------------------------------------------------------------------
-  if (message.content.toLowerCase().indexOf("neat") !=- 1) {
-    message.channel.send("*****NEURAL EVOLUTION OF AUGMENTING TOPOLOGIES*****"); return;
-  }
-  if (message.content.toLowerCase().indexOf("ping") != -1) {
-    message.channel.send("pong!"); return;
-  }
-  if (message.content.toLowerCase().indexOf(":breathin:") != -1) {
-    message.channel.send("<:boi:471993433721143297>"); return;
-  }
-  if ( sarcasm(message.content.toLowerCase()) ) {
-    // not sarcasm if in meters per second
-    if (message.content.toLowerCase() == "m/s") {
-      return;
+
+    if ((message.content.toLowerCase().indexOf("neat") !=- 1) && num1 <= 0.05) {
+        message.channel.send("*****NEURAL EVOLUTION OF AUGMENTING TOPOLOGIES*****"); return;
+        }
+
+    if (message.content.toLowerCase().indexOf("ping") != -1) {
+        message.channel.send("pong!"); return;
+        }
+    if (message.content.toLowerCase().indexOf(":breathin:") != -1) {
+        message.channel.send("<:boi:471993433721143297>"); return;
+        }
+
+    if ( sarcasm(message.content.toLowerCase()) ) {
+        // not sarcasm if in meters per second
+        if (message.content.toLowerCase() == "m/s") {
+        return;
+        }
+        message.channel.send("*******S A R C A S M    D E T E C T E D*******"); return;
     }
-    message.channel.send("*******S A R C A S M    D E T E C T E D*******"); return;
-  }
-  if (message.content.toLowerCase().indexOf("/spooky") != -1) {
-    var spookyVideo = vids[Math.floor(Math.random()*vids.length)];
-    message.channel.send(spookyVideo.name + ": " + spookyVideo.url); return;
-  }
-  
+    
+    if (message.content.toLowerCase().indexOf("/spooky") != -1) {
+        var spookyVideo = vids[Math.floor(Math.random()*vids.length)];
+        message.channel.send(spookyVideo.name + ": " + spookyVideo.url); return;
+    }
+    
   /*-----------------------------------------------------------------------------------
   * Randomly posts spooky memes for spooktober
   * -----------------------------------------------------------------------------------*/
-  /*
   if (num1 <= 0.01) {
   message.channel.send({ files: [ './SkeletorData/SpookyMemes/' + newMemeSpooky() ]});
   return;
   }
-  */
-
-  
 });
 
 

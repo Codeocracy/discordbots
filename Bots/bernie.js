@@ -32,7 +32,7 @@ client.on("message", (message) => {
       return;
     }
 
-    if(message.content.toLowerCase().indexOf("class") != -1) {
+    if((message.content.toLowerCase().indexOf("class") != -1) && (num < 0.1)) {
       message.channel.send("*screams in economic justice*"); return;
     }
 });

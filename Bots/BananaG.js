@@ -38,8 +38,9 @@ client.on("message", (message) => {
   * Sends the banhammer when profanity is detected
   * -----------------------------------------------------------------------------------*/ 
   for (var i = 0; i < profanities.length; i++) {
+    // I know this is a pretty garbage implementation, but I am too lazy to change it right now
     if (message.content.toLowerCase().indexOf(profanities[i].profanity) != -1) {
-      if (findProfanity(message.content.toLowerCase(), profanities[i].profanity))
+      if ((findProfanity(message.content.toLowerCase(), profanities[i].profanity)) && (num <= 0.1))
       {
         message.channel.send("watch your profanity <:banhammer:495774180340531200>"); return;
       } 

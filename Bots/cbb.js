@@ -40,11 +40,9 @@ client.on("message", (message) => {
     // When someone mentions the SAT, respond with an SAT phrase
     //-----------------------------------------------------------------------------------
 
-    if (message.content.toLowerCase().indexOf("sat") != -1) {
-        if (num <= 0.15) {
+    if ((message.content.toLowerCase().indexOf("sat") != -1) && (num < 0.01)) {
         var satPhrase = sat[Math.floor(Math.random()*sat.length)];
         message.channel.send(satPhrase.phrase);
-        }
     }
 
     //-----------------------------------------------------------------------------------
